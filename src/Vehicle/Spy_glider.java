@@ -1,0 +1,35 @@
+package Vehicle;
+
+public class Spy_glider extends Air_vehicle implements not_motorized
+{
+
+    public String power_source;
+    public String energy_score;
+
+    public Spy_glider(int Ability_to_move,String power_source,String energy_score)
+    {
+        super(Ability_to_move,"privileged",0,1,50,"Army");
+        this.energy_score=energy_score;
+        this.power_source=power_source;
+    }
+    public String power_source()
+    {
+        return power_source;
+    }
+    public String energy_score()
+    {
+        energy_score="C";
+        return  energy_score;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString()+"use of vehicle:"+use_of_air_vehicle;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        return super.equals(o);
+    }
+
+}
