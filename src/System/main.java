@@ -3,6 +3,7 @@ package System;
 import java.util.ArrayList;
 import java.util.Scanner;
 import Vehicle.*;
+import GUI.*;
 
 //-------------Documentation-------------
 //This is a vehicle rental agency program that allows
@@ -14,7 +15,7 @@ import Vehicle.*;
 public class main {
     public static void main(String[] args)
     {
-        ArrayList<Vehicle> dealership = new ArrayList<Vehicle>();
+       /* ArrayList<Vehicle> dealership = new ArrayList<Vehicle>();
         int Ability_to_move=0,Total_distance=0,Max_passengers=0,Max_speed=0,avr_fuel=0,avr_life_engine=0,num_of_wheels;
         String Model, power_source, energy_score;
         boolean with_wind=false;
@@ -273,7 +274,10 @@ public class main {
                 default:
                     System.out.println("Invalid option");
             }
-        }
+        }*/
+
+
+        VehicleEntryWindow vehicleEntryWindow=new VehicleEntryWindow();
 
     }
 }
