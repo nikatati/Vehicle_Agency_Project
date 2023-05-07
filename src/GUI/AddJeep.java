@@ -13,10 +13,6 @@ import java.util.List;
 public class AddJeep extends JDialog {
 
     JPanel south,north;
-    private JTextField abilityMoveTF,modelTF,maxPassengersTF,
-            Max_speedTF, road_typeTF, avr_fuelTF, avr_life_engineTF;
-
-
 
     public AddJeep(VehiclePanel panel)
     {
@@ -88,44 +84,10 @@ public class AddJeep extends JDialog {
         this.setResizable(false);
 
 
-        /*abilityMoveTF=new JTextField();
-        abilityMoveTF.setPreferredSize(new Dimension(170,40));
-        modelTF=new JTextField();
-        modelTF.setPreferredSize(new Dimension(170,40));
-        maxPassengersTF=new JTextField();
-        maxPassengersTF.setPreferredSize(new Dimension(170,40));
-        Max_speedTF=new JTextField();
-        Max_speedTF.setPreferredSize(new Dimension(170,40));
-        road_typeTF=new JTextField();
-        road_typeTF.setPreferredSize(new Dimension(170,40));
-        avr_fuelTF=new JTextField();
-        avr_fuelTF.setPreferredSize(new Dimension(170,40));
-        avr_life_engineTF=new JTextField();
-        avr_life_engineTF.setPreferredSize(new Dimension(170,40));*/
-
-        /*north.add(abilityMoveTF);
-        north.add(modelTF);
-        north.add(maxPassengersTF);
-        north.add(Max_speedTF);
-        north.add(road_typeTF);
-        north.add(avr_fuelTF);
-        north.add(avr_life_engineTF);*/
-
-        /*south.add(new JTextArea());
-        south.add(new JTextArea());
-        south.add(new JTextArea());
-        south.add(new JTextArea());
-        south.add(new JTextArea());
-        south.add(new JTextArea());
-        south.add(new JTextArea());*/
-
-        //this.setLayout(null);
         this.add(north);
-        //this.add(south,BorderLayout.SOUTH);
         this.pack();
 
 
-        //panel.getDealership().add()
 
     }
 }

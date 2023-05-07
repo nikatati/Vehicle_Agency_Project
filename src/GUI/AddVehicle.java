@@ -1,14 +1,10 @@
 package GUI;
-import Vehicle.*;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.ItemEvent;
-import java.awt.event.ItemListener;
-import java.util.ArrayList;
-import java.util.List;
+
 public class AddVehicle extends JDialog
 {
     JButton chooseBtn;
@@ -51,7 +47,7 @@ public class AddVehicle extends JDialog
                 }
                 if(cb.getSelectedItem()=="Game gilder")
                 {
-                    AddGameGIlder addGameGilder=new AddGameGIlder(panel);
+                    AddGameGilder addGameGilder=new AddGameGilder(panel);
                 }
                 if(cb.getSelectedItem()=="Spy gilder")
                 {
