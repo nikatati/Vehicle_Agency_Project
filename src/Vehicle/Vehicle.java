@@ -1,5 +1,7 @@
 package Vehicle;
 
+import java.util.ArrayList;
+
 //-------------Documentation-------------
 //This code defines an abstract class called "Vehicle".
 //The class contains five instance variables:
@@ -15,6 +17,7 @@ public abstract class Vehicle {
     protected int Total_distance;
     protected int Max_passengers;
     protected int Max_speed;
+    ArrayList<Vehicle> dealership = new ArrayList<Vehicle>();
 
     public Vehicle()
     {
@@ -40,6 +43,10 @@ public abstract class Vehicle {
     }
 
     public String getModel(){return Model;}
+
+    public ArrayList getdealeship(){return dealership;}
+    public int getdealeshipSize(){return dealership.size();}
+
     public  void setAbility_to_move(int newAvilability){Ability_to_move=newAvilability;}
 
     @Override

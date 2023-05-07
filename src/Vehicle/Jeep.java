@@ -5,7 +5,8 @@ public class Jeep extends Land_vehicle implements motorized,commercial_use
     public int avr_fuel;
     public int avr_life_engine;
 
-    public Jeep(int Ability_to_move, String Model, int Max_passengers, int Max_speed, String road_type, int avr_fuel, int avr_life_engine)
+    public Jeep(int Ability_to_move, String Model, int Max_passengers,
+                int Max_speed, String road_type, int avr_fuel, int avr_life_engine)
     {
         super(Ability_to_move, Model, 0, Max_passengers, Max_speed, 4, road_type);
         if (Max_passengers <= 5 && (road_type.equals("dirt") || road_type.equals("paved"))) {
