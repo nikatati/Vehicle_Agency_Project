@@ -1,5 +1,6 @@
 package Vehicle;
 
+import java.awt.image.BufferedImage;
 import java.util.Objects;
 //-------------Documentation-------------
 //This is a Java abstract class named "Water_vehicle" which extends the "Vehicle" abstract class.
@@ -16,9 +17,9 @@ public abstract class Water_vehicle extends Vehicle implements IWater_vehicle{
         flag_country=null;
     }
 
-    Water_vehicle(int Ability_to_move, String Model, int Total_distance, int Max_passengers, int Max_speed, boolean with_wind, String flag_country)
+    Water_vehicle(int Ability_to_move, String Model, int Total_distance, int Max_passengers, int Max_speed, boolean with_wind, String flag_country, BufferedImage img)
     {
-        super(Ability_to_move,Model,Total_distance,Max_passengers,Max_speed);
+        super(Ability_to_move,Model,Total_distance,Max_passengers,Max_speed,img);
         this.with_wind=with_wind;
         this.flag_country=flag_country;
     }

@@ -1,5 +1,7 @@
 package Vehicle;
 
+import java.awt.image.BufferedImage;
+import java.nio.Buffer;
 import java.util.Objects;
 
 //-------------Documentation-------------
@@ -15,9 +17,9 @@ public abstract class Air_vehicle extends Vehicle implements IAir_vehicle{
         use_of_air_vehicle="Army";
     }
 
-    Air_vehicle(int Ability_to_move, String Model, int Total_distance, int Max_passengers, int Max_speed, String use_of_air_vehicle)
+    Air_vehicle(int Ability_to_move, String Model, int Total_distance, int Max_passengers, int Max_speed, String use_of_air_vehicle, BufferedImage img)
     {
-        super(Ability_to_move,Model,Total_distance,Max_passengers,Max_speed );
+        super(Ability_to_move,Model,Total_distance,Max_passengers,Max_speed,img );
         this.use_of_air_vehicle="Army ";
     }
 

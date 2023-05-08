@@ -1,12 +1,14 @@
 package Vehicle;
 
+import java.awt.image.BufferedImage;
+
 public class Bicycle extends Land_vehicle implements not_motorized
 {
 
 
-    public Bicycle(int Ability_to_move, String Model, int Max_passengers, int Max_speed, String road_type)
+    public Bicycle(int Ability_to_move, String Model, int Max_passengers, int Max_speed, String road_type, BufferedImage img)
     {
-        super(Ability_to_move, Model, 0, Max_passengers, Max_speed, 2, road_type);
+        super(Ability_to_move, Model, 0, Max_passengers, Max_speed, 2, road_type,img);
     }
 
     @Override

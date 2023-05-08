@@ -1,18 +1,22 @@
 package GUI;
 import Vehicle.*;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
+import java.awt.image.BufferedImage;
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class AddBicycle extends JDialog {
     JPanel south,north;
+    BufferedImage img=null;
 
     public AddBicycle(VehiclePanel panel)
     {
@@ -67,6 +71,7 @@ public class AddBicycle extends JDialog {
         choosePictureL.setBounds(10,120,80,25);
         north.add(choosePictureL);
 
+
         JButton choosePictureB =new JButton("Choose");
         choosePictureB.setBounds(10,120,80,25);
         choosePictureB.addActionListener(new ActionListener() {
@@ -75,10 +80,19 @@ public class AddBicycle extends JDialog {
                 JFileChooser fileChooser=new JFileChooser();
                 fileChooser.setCurrentDirectory(new File("."));
                 int responseFile=fileChooser.showSaveDialog(null);
-
+                File filePic;
                 if (responseFile==JFileChooser.APPROVE_OPTION)
                 {
-                    File filePic =new File(fileChooser.getSelectedFile().getAbsolutePath());
+                    filePic =new File(fileChooser.getSelectedFile().getAbsolutePath());
+                    try{
+                    img= ImageIO.read(filePic);
+                    }
+                    catch (IOException ex)
+                    {
+                        System.out.println("Cannot load img");
+                        return;
+                    }
+
                     System.out.println(filePic);
                 }
             }
@@ -92,7 +106,7 @@ public class AddBicycle extends JDialog {
             @Override
             public void actionPerformed(ActionEvent e) {
                 Bicycle bicycle=new Bicycle(  Integer.parseInt(abilityT.getText()),modelT.getText(),Integer.parseInt(maxPassengersT.getText()),
-                        Integer.parseInt(Max_speedT.getText()),road_typeT.getText());
+                        Integer.parseInt(Max_speedT.getText()),road_typeT.getText(),img);
 
 
                 System.out.println(bicycle.toString());

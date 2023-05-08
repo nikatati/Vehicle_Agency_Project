@@ -1,16 +1,19 @@
 package Vehicle;
 
+import java.awt.image.BufferedImage;
+
 public class Amphibious extends Vehicle implements IWater_vehicle,ILand_vehicle,motorized
 {
     private Water_vehicle water_vehicle;
     private Land_vehicle land_vehicle;
 
-    public int avr_fuel,Ability_to_move , Total_distance, Max_passengers, Max_speed  , num_of_wheels,avr_life_engine;
-    public String Model,road_type,flag_country;
-    public boolean with_wind;
+    private int avr_fuel,Ability_to_move , Total_distance, Max_passengers, Max_speed  , num_of_wheels,avr_life_engine;
+    private String Model,road_type,flag_country;
+    private boolean with_wind;
+    private BufferedImage img;
 
     public Amphibious(int Ability_to_move, String Model, int Total_distance, int Max_passengers, int Max_speed  , int num_of_wheels,
-                      String road_type, boolean with_wind, String flag_country,int  avr_fuel,int  avr_life_engine)
+                      String road_type, boolean with_wind, String flag_country, int  avr_fuel, int  avr_life_engine, BufferedImage img)
     {
         this.Ability_to_move=Ability_to_move;
         this.Model=Model;
@@ -23,8 +26,9 @@ public class Amphibious extends Vehicle implements IWater_vehicle,ILand_vehicle,
         this.flag_country=flag_country;
         this.avr_life_engine=avr_life_engine;
         this.avr_fuel=avr_fuel;
-        water_vehicle=new Frigate(Ability_to_move, Model, Max_passengers,  Max_speed  , with_wind);
-        land_vehicle=new Jeep( Ability_to_move,  Model,  Max_passengers,  Max_speed,  road_type,  avr_fuel,  avr_life_engine);
+        this.img=img;
+        water_vehicle=new Frigate(Ability_to_move, Model, Max_passengers,  Max_speed  , with_wind,img);
+        land_vehicle=new Jeep( Ability_to_move,  Model,  Max_passengers,  Max_speed,  road_type,  avr_fuel,  avr_life_engine,img);
     }
 
     @Override

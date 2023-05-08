@@ -1,14 +1,16 @@
 package Vehicle;
 
+import java.awt.image.BufferedImage;
+
 public class Jeep extends Land_vehicle implements motorized,commercial_use
 {
     public int avr_fuel;
     public int avr_life_engine;
 
     public Jeep(int Ability_to_move, String Model, int Max_passengers,
-                int Max_speed, String road_type, int avr_fuel, int avr_life_engine)
+                int Max_speed, String road_type, int avr_fuel, int avr_life_engine, BufferedImage img)
     {
-        super(Ability_to_move, Model, 0, Max_passengers, Max_speed, 4, road_type);
+        super(Ability_to_move, Model, 0, Max_passengers, Max_speed, 4, road_type,img);
         if (Max_passengers <= 5 && (road_type.equals("dirt") || road_type.equals("paved"))) {
             this.avr_fuel = avr_fuel;
             this.avr_life_engine = avr_life_engine;

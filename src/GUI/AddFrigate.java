@@ -1,13 +1,16 @@
 package GUI;
 import Vehicle.*;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
+import java.awt.image.BufferedImage;
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,6 +18,7 @@ public class AddFrigate extends JDialog
 {
 
     JPanel south,north;
+    BufferedImage img=null;
 
     public AddFrigate(VehiclePanel panel)
     {
@@ -79,6 +83,14 @@ public class AddFrigate extends JDialog
                 if (responseFile==JFileChooser.APPROVE_OPTION)
                 {
                     File filePic =new File(fileChooser.getSelectedFile().getAbsolutePath());
+                    try{
+                        img= ImageIO.read(filePic);
+                    }
+                    catch (IOException ex)
+                    {
+                        System.out.println("Cannot load img");
+                        return;
+                    }
                     System.out.println(filePic);
                 }
             }
@@ -92,7 +104,7 @@ public class AddFrigate extends JDialog
             @Override
             public void actionPerformed(ActionEvent e) {
                 Frigate frigate=new Frigate(  Integer.parseInt(abilityT.getText()),modelT.getText(),Integer.parseInt(maxPassengersT.getText()),
-                        Integer.parseInt(Max_speedT.getText()),with_windC.isSelected() );
+                        Integer.parseInt(Max_speedT.getText()),with_windC.isSelected(),img);
 
 
                 System.out.println(frigate.toString());

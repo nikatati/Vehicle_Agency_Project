@@ -1,14 +1,16 @@
 package Vehicle;
 
+import java.awt.image.BufferedImage;
+
 public class Spy_glider extends Air_vehicle implements not_motorized
 {
 
     public String power_source;
     public String energy_score;
 
-    public Spy_glider(int Ability_to_move,String power_source,String energy_score)
+    public Spy_glider(int Ability_to_move, String power_source, String energy_score, BufferedImage img)
     {
-        super(Ability_to_move,"privileged",0,1,50,"Army");
+        super(Ability_to_move,"privileged",0,1,50,"Army",img);
         this.energy_score=energy_score;
         this.power_source=power_source;
     }

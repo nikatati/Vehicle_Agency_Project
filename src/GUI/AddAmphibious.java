@@ -1,19 +1,23 @@
 package GUI;
 import Vehicle.*;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
+import java.awt.image.BufferedImage;
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class AddAmphibious extends JDialog {
 
     JPanel south,north;
+    BufferedImage img=null;
 
     public AddAmphibious(VehiclePanel panel)
     {
@@ -116,6 +120,14 @@ public class AddAmphibious extends JDialog {
                 if (responseFile==JFileChooser.APPROVE_OPTION)
                 {
                     File filePic =new File(fileChooser.getSelectedFile().getAbsolutePath());
+                    try{
+                        img= ImageIO.read(filePic);
+                    }
+                    catch (IOException ex)
+                    {
+                        System.out.println("Cannot load img");
+                        return;
+                    }
                     System.out.println(filePic);
                 }
             }
@@ -130,7 +142,7 @@ public class AddAmphibious extends JDialog {
                 Amphibious amphibious=new Amphibious(  Integer.parseInt(abilityT.getText()),modelT.getText(),0,Integer.parseInt(maxPassengersT.getText()),
                         Integer.parseInt(Max_speedT.getText()),Integer.parseInt(num_of_wheelsT.getText()),road_typeT.getText(),
                         with_windC.isSelected(),flag_countryT.getText(),
-                        Integer.parseInt(avr_fuelT.getText()),Integer.parseInt(avr_life_engineT.getText())   );
+                        Integer.parseInt(avr_fuelT.getText()),Integer.parseInt(avr_life_engineT.getText()),img  );
 
 
                 System.out.println(amphibious.toString());

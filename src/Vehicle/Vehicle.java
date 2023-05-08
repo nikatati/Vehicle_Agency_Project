@@ -1,5 +1,6 @@
 package Vehicle;
 
+import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 
 //-------------Documentation-------------
@@ -17,6 +18,7 @@ public abstract class Vehicle {
     protected int Total_distance;
     protected int Max_passengers;
     protected int Max_speed;
+    protected BufferedImage img;
     ArrayList<Vehicle> dealership = new ArrayList<Vehicle>();
 
     public Vehicle()
@@ -26,15 +28,17 @@ public abstract class Vehicle {
         this.Total_distance=0;
         this.Max_passengers=0;
         this.Max_speed=0;
+        this.img=null;
     }
 
-    public Vehicle(int Ability_to_move, String Model, int Total_distance, int Max_passengers, int Max_speed)
+    public Vehicle(int Ability_to_move, String Model, int Total_distance, int Max_passengers, int Max_speed,BufferedImage img)
     {
         this.Ability_to_move=Ability_to_move;
         this.Model=Model;
         this.Total_distance=Total_distance;
         this.Max_passengers=Max_passengers;
         this.Max_speed=Max_speed;
+        this.img=img;
     }
 
     @Override
@@ -48,6 +52,8 @@ public abstract class Vehicle {
     public int getdealeshipSize(){return dealership.size();}
 
     public  void setAbility_to_move(int newAvilability){Ability_to_move=newAvilability;}
+
+    public BufferedImage getImg(){return img;}
 
     @Override
     public String toString() {

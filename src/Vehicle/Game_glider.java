@@ -1,14 +1,16 @@
 package Vehicle;
 
+import java.awt.image.BufferedImage;
+
 public class Game_glider extends Air_vehicle implements not_motorized
 {
 
     public String power_source;
     public String energy_score;
 
-    public Game_glider(int Ability_to_move)
+    public Game_glider(int Ability_to_move, BufferedImage img)
     {
-        super(Ability_to_move,"Toy",0,0,10,"Civilian");
+        super(Ability_to_move,"Toy",0,0,10,"Civilian",img);
 
     }
 

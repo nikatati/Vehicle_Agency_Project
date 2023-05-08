@@ -1,5 +1,6 @@
 package Vehicle;
 
+import java.awt.image.BufferedImage;
 import java.util.Objects;
 //-------------Documentation-------------
 //This is a Java class named Land_vehicle which extends the abstract class Vehicle.
@@ -16,9 +17,9 @@ public abstract class Land_vehicle extends Vehicle implements ILand_vehicle
         this.road_type="paved";
     }
 
-    public Land_vehicle(int Ability_to_move, String Model, int Total_distance, int Max_passengers, int Max_speed  , int num_of_wheels, String road_type)
+    public Land_vehicle(int Ability_to_move, String Model, int Total_distance, int Max_passengers, int Max_speed  , int num_of_wheels, String road_type, BufferedImage img)
     {
-        super(Ability_to_move, Model, Total_distance, Max_passengers, Max_speed);
+        super(Ability_to_move, Model, Total_distance, Max_passengers, Max_speed,img);
         this.num_of_wheels=num_of_wheels;
         this.road_type=road_type;
     }

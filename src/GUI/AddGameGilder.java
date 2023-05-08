@@ -1,18 +1,22 @@
 package GUI;
 import Vehicle.*;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
+import java.awt.image.BufferedImage;
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class AddGameGilder extends JDialog {
     JPanel south,north;
+    BufferedImage img=null;
 
     public AddGameGilder(VehiclePanel panel)
     {
@@ -46,6 +50,14 @@ public class AddGameGilder extends JDialog {
                 if (responseFile==JFileChooser.APPROVE_OPTION)
                 {
                     File filePic =new File(fileChooser.getSelectedFile().getAbsolutePath());
+                    try{
+                        img= ImageIO.read(filePic);
+                    }
+                    catch (IOException ex)
+                    {
+                        System.out.println("Cannot load img");
+                        return;
+                    }
                     System.out.println(filePic);
                 }
             }
@@ -58,7 +70,7 @@ public class AddGameGilder extends JDialog {
         addB.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Game_glider game_glider=new Game_glider(  Integer.parseInt(abilityT.getText()) );
+                Game_glider game_glider=new Game_glider(  Integer.parseInt(abilityT.getText()),img);
 
                 panel.getDealership().add(game_glider);
                 System.out.println(game_glider.toString());

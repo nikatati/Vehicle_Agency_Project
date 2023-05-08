@@ -1,5 +1,6 @@
 package Vehicle;
 
+import java.awt.image.BufferedImage;
 import java.util.Objects;
 
 public class Croz_ship extends Water_vehicle implements motorized,commercial_use
@@ -7,9 +8,9 @@ public class Croz_ship extends Water_vehicle implements motorized,commercial_use
     public int avr_fuel;
     public int avr_life_engine;
 
-    public Croz_ship(int Ability_to_move, String Model, int Max_passengers, int Max_speed  ,int avr_fuel,int avr_life_engine)
+    public Croz_ship(int Ability_to_move, String Model, int Max_passengers, int Max_speed  , int avr_fuel, int avr_life_engine, BufferedImage img)
     {
-        super(Ability_to_move,Model,0,Max_passengers,Max_speed, true, "Israel");
+        super(Ability_to_move,Model,0,Max_passengers,Max_speed, true, "Israel",img);
         this.avr_fuel=avr_fuel;
         this.avr_life_engine=avr_life_engine;
     }

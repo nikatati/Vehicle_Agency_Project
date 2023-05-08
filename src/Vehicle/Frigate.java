@@ -1,13 +1,15 @@
 package Vehicle;
 
+import java.awt.image.BufferedImage;
+
 public class Frigate extends Water_vehicle implements motorized
 {
     public int avr_fuel;
     public int avr_life_engine;
 
-    public Frigate(int Ability_to_move, String Model, int Max_passengers, int Max_speed  , boolean with_wind )
+    public Frigate(int Ability_to_move, String Model, int Max_passengers, int Max_speed  , boolean with_wind, BufferedImage img)
     {
-        super(Ability_to_move,Model,0,Max_passengers,Max_speed, with_wind, "Israel");
+        super(Ability_to_move,Model,0,Max_passengers,Max_speed, with_wind, "Israel",img);
         this.avr_fuel=500;
         this.avr_life_engine=4;
     }

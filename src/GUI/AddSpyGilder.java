@@ -1,19 +1,22 @@
 package GUI;
 import Vehicle.*;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
+import java.awt.image.BufferedImage;
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class AddSpyGilder extends JDialog {
     JPanel south,north;
-
+    BufferedImage img=null;
 
     public AddSpyGilder(VehiclePanel panel)
     { north = new JPanel();
@@ -64,6 +67,14 @@ public class AddSpyGilder extends JDialog {
                 if (responseFile==JFileChooser.APPROVE_OPTION)
                 {
                     File filePic =new File(fileChooser.getSelectedFile().getAbsolutePath());
+                    try{
+                        img= ImageIO.read(filePic);
+                    }
+                    catch (IOException ex)
+                    {
+                        System.out.println("Cannot load img");
+                        return;
+                    }
                     System.out.println(filePic);
                 }
             }
@@ -76,7 +87,7 @@ public class AddSpyGilder extends JDialog {
         addB.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Spy_glider spy_glider=new Spy_glider(Integer.parseInt(abilityT.getText()),power_sourceT.getText(),energy_scoreT.getText());
+                Spy_glider spy_glider=new Spy_glider(Integer.parseInt(abilityT.getText()),power_sourceT.getText(),energy_scoreT.getText(),img);
 
                 panel.getDealership().add(spy_glider);
                 System.out.println(spy_glider.toString());
