@@ -72,8 +72,12 @@ public class AddGameGilder extends JDialog {
             public void actionPerformed(ActionEvent e) {
                 Game_glider game_glider=new Game_glider(  Integer.parseInt(abilityT.getText()),img);
 
+
+
                 panel.getDealership().add(game_glider);
+                JOptionPane.showMessageDialog(null,"game glider ship added !");
                 System.out.println(game_glider.toString());
+
 
 
             }

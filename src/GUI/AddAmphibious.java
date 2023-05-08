@@ -144,7 +144,8 @@ public class AddAmphibious extends JDialog {
                         with_windC.isSelected(),flag_countryT.getText(),
                         Integer.parseInt(avr_fuelT.getText()),Integer.parseInt(avr_life_engineT.getText()),img  );
 
-
+                panel.getDealership().add(amphibious);
+                JOptionPane.showMessageDialog(null,"Amphibious added !");
                 System.out.println(amphibious.toString());
 
 

@@ -126,6 +126,7 @@ public class AddJeep extends JDialog {
                         Integer.parseInt(avr_life_engineT.getText()),img );
 
                 panel.getDealership().add(jeep);
+                JOptionPane.showMessageDialog(null,"Jeep added !");
                 System.out.println(jeep.toString());
 
 

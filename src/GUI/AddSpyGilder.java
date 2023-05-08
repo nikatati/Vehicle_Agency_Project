@@ -90,6 +90,7 @@ public class AddSpyGilder extends JDialog {
                 Spy_glider spy_glider=new Spy_glider(Integer.parseInt(abilityT.getText()),power_sourceT.getText(),energy_scoreT.getText(),img);
 
                 panel.getDealership().add(spy_glider);
+                JOptionPane.showMessageDialog(null,"Spy glider added !");
                 System.out.println(spy_glider.toString());
             }
         });

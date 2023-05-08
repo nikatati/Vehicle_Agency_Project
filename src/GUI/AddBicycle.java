@@ -109,8 +109,11 @@ public class AddBicycle extends JDialog {
                         Integer.parseInt(Max_speedT.getText()),road_typeT.getText(),img);
 
 
-                System.out.println(bicycle.toString());
                 panel.getDealership().add(bicycle);
+                JOptionPane.showMessageDialog(null,"bicycle added !");
+                System.out.println(bicycle.toString());
+
+
 
 
             }

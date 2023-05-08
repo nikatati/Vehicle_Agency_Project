@@ -116,8 +116,10 @@ public class AddCrozShip extends JDialog {
                         Integer.parseInt(Max_speedT.getText()),Integer.parseInt(avr_fuelT.getText()),Integer.parseInt(avr_life_engineT.getText()),img);
 
 
-                System.out.println(croz_ship.toString());
                 panel.getDealership().add(croz_ship);
+                JOptionPane.showMessageDialog(null,"croz ship added !");
+                System.out.println(croz_ship.toString());
+
 
 
             }

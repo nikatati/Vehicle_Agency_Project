@@ -107,7 +107,11 @@ public class AddFrigate extends JDialog
                         Integer.parseInt(Max_speedT.getText()),with_windC.isSelected(),img);
 
 
+
+                panel.getDealership().add(frigate);
+                JOptionPane.showMessageDialog(null,"frigate ship added !");
                 System.out.println(frigate.toString());
+
 
 
             }
