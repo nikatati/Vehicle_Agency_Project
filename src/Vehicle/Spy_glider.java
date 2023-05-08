@@ -24,7 +24,7 @@ public class Spy_glider extends Air_vehicle implements not_motorized
 
     @Override
     public String toString() {
-        return super.toString()+"use of vehicle:"+use_of_air_vehicle;
+        return "~~Spy gilder~~ "+super.toString()+"use of vehicle:"+use_of_air_vehicle;
     }
 
     @Override

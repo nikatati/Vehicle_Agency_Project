@@ -7,6 +7,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,42 +28,79 @@ public class AddFrigate extends JDialog
         abilityL.setBounds(10,20,80,25);
         north.add(abilityL);
 
-        JTextField abilitT=new JTextField(20);
-        abilitT.setBounds(10,20,165,25);
-        north.add(abilitT);
+        JTextField abilityT=new JTextField(20);
+        abilityT.setBounds(10,20,165,25);
+        north.add(abilityT);
 
         JLabel modelL =new JLabel("Model");
-        abilityL.setBounds(10,40,80,25);
+        modelL.setBounds(10,40,80,25);
         north.add(modelL);
 
         JTextField modelT=new JTextField(20);
-        abilitT.setBounds(10,40,165,25);
+        modelT.setBounds(10,40,165,25);
         north.add(modelT);
 
         JLabel maxPassengersL =new JLabel("max Passengers");
-        abilityL.setBounds(10,60,80,25);
+        maxPassengersL.setBounds(10,60,80,25);
         north.add(maxPassengersL);
 
         JTextField maxPassengersT=new JTextField(20);
-        abilitT.setBounds(10,60,165,25);
+        maxPassengersT.setBounds(10,60,165,25);
         north.add(maxPassengersT);
 
 
         JLabel Max_speedL =new JLabel("max Speed");
-        abilityL.setBounds(10,80,80,25);
+        Max_speedL.setBounds(10,80,80,25);
         north.add(Max_speedL);
 
         JTextField Max_speedT=new JTextField(20);
-        abilitT.setBounds(10,80,165,25);
+        Max_speedT.setBounds(10,80,165,25);
         north.add(Max_speedT);
 
-        JLabel with_windL =new JLabel("Whit wind (true/false)");
-        abilityL.setBounds(10,100,80,25);
-        north.add(with_windL);
 
-        JTextField with_windT=new JTextField(20);
-        abilitT.setBounds(10,80,165,25);
-        north.add(with_windT);
+        JCheckBox with_windC = new JCheckBox("with wind");
+        with_windC.setBounds(10,80,165,25);
+        north.add(with_windC);
+
+
+        JLabel choosePictureL =new JLabel("Choose picture");
+        choosePictureL.setBounds(10,120,80,25);
+        north.add(choosePictureL);
+
+        JButton choosePictureB =new JButton("Choose");
+        choosePictureB.setBounds(10,120,80,25);
+        choosePictureB.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFileChooser fileChooser=new JFileChooser();
+                fileChooser.setCurrentDirectory(new File("."));
+                int responseFile=fileChooser.showSaveDialog(null);
+
+                if (responseFile==JFileChooser.APPROVE_OPTION)
+                {
+                    File filePic =new File(fileChooser.getSelectedFile().getAbsolutePath());
+                    System.out.println(filePic);
+                }
+            }
+        });
+        north.add(choosePictureB);
+
+
+        JButton addB =new JButton("Add");
+        addB.setBounds(10,180,80,25);
+        addB.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Frigate frigate=new Frigate(  Integer.parseInt(abilityT.getText()),modelT.getText(),Integer.parseInt(maxPassengersT.getText()),
+                        Integer.parseInt(Max_speedT.getText()),with_windC.isSelected() );
+
+
+                System.out.println(frigate.toString());
+
+
+            }
+        });
+        north.add(addB);
 
 
 

@@ -7,6 +7,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,9 +26,47 @@ public class AddGameGilder extends JDialog {
         abilityL.setBounds(10,20,80,25);
         north.add(abilityL);
 
-        JTextField abilitT=new JTextField(20);
-        abilitT.setBounds(10,20,165,25);
-        north.add(abilitT);
+        JTextField abilityT=new JTextField(20);
+        abilityT.setBounds(10,20,165,25);
+        north.add(abilityT);
+
+        JLabel choosePictureL =new JLabel("Choose picture");
+        choosePictureL.setBounds(10,40,80,25);
+        north.add(choosePictureL);
+
+        JButton choosePictureB =new JButton("Choose");
+        choosePictureB.setBounds(10,40,80,25);
+        choosePictureB.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFileChooser fileChooser=new JFileChooser();
+                fileChooser.setCurrentDirectory(new File("."));
+                int responseFile=fileChooser.showSaveDialog(null);
+
+                if (responseFile==JFileChooser.APPROVE_OPTION)
+                {
+                    File filePic =new File(fileChooser.getSelectedFile().getAbsolutePath());
+                    System.out.println(filePic);
+                }
+            }
+        });
+        north.add(choosePictureB);
+
+
+        JButton addB =new JButton("Add");
+        addB.setBounds(10,60,80,25);
+        addB.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Game_glider game_glider=new Game_glider(  Integer.parseInt(abilityT.getText()) );
+
+                panel.getDealership().add(game_glider);
+                System.out.println(game_glider.toString());
+
+
+            }
+        });
+        north.add(addB);
 
 
 
