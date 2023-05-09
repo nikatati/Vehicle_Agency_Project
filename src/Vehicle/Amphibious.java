@@ -50,5 +50,10 @@ public class Amphibious extends Vehicle implements IWater_vehicle,ILand_vehicle,
 
     public String move(){return  "move on land and water";}
     public int Average_fuel_consumption(){return avr_fuel; }
+
+    public void setFlag_country(String flag_country) {
+        this.flag_country = flag_country;
+    }
+
     public int Average_life_of_the_engine(){return avr_life_engine;}
 }

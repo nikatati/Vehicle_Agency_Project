@@ -47,6 +47,8 @@ public abstract class Water_vehicle extends Vehicle implements IWater_vehicle{
         return with_wind == that.with_wind && Objects.equals(flag_country, that.flag_country);
     }
 
+    public void setFlagCountry(String flag_country){this.flag_country=flag_country;}
+
     public String move(){return "move on water";}
 
 

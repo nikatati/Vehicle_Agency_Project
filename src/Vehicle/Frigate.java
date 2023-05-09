@@ -45,4 +45,6 @@ public class Frigate extends Water_vehicle implements motorized
         avr_life_engine=4;
         return avr_life_engine;
     }
+
+
 }
