@@ -17,6 +17,7 @@ import java.util.List;
 public class AddGameGilder extends JDialog {
     JPanel south,north;
     BufferedImage img=null;
+    File filePic;
 
     public AddGameGilder(VehiclePanel panel)
     {
@@ -49,7 +50,7 @@ public class AddGameGilder extends JDialog {
 
                 if (responseFile==JFileChooser.APPROVE_OPTION)
                 {
-                    File filePic =new File(fileChooser.getSelectedFile().getAbsolutePath());
+                    filePic =new File(fileChooser.getSelectedFile().getAbsolutePath());
                     try{
                         img= ImageIO.read(filePic);
                     }

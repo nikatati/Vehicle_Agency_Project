@@ -19,6 +19,7 @@ public class VehicleEntryWindow extends JFrame
         super("Agency");
         this.add(new VehiclePanel());
         this.setVisible(true);
+        this.setResizable(false);
         this.pack();
 
 
